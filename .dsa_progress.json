@@ -1,0 +1,17 @@
+{
+  "problems": [
+    {
+      "problem": "Count_digit",
+      "topic": "Basics",
+      "topic_dir": "01_Basics",
+      "difficulty": "Easy",
+      "path": "01_Basics/Easy/Count_digit.py",
+      "patterns": [
+        "Math"
+      ],
+      "updated_at": "2026-07-09T15:56:30",
+      "revision_count": 0,
+      "revision_due": "2026-07-10"
+    }
+  ]
+}
