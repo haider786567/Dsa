@@ -25,6 +25,19 @@
       "updated_at": "2026-07-10T17:14:51",
       "revision_count": 0,
       "revision_due": "2026-07-11"
+    },
+    {
+      "problem": "automorphic_number",
+      "topic": "Basics",
+      "topic_dir": "01_Basics",
+      "difficulty": "Easy",
+      "path": "01_Basics/Easy/automorphic_number.py",
+      "patterns": [
+        "Math"
+      ],
+      "updated_at": "2026-07-10T17:52:16",
+      "revision_count": 0,
+      "revision_due": "2026-07-11"
     }
   ]
 }
