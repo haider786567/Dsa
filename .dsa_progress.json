@@ -51,6 +51,19 @@
       "updated_at": "2026-07-11T13:26:23",
       "revision_count": 0,
       "revision_due": "2026-07-12"
+    },
+    {
+      "problem": "Armstrong_check",
+      "topic": "Basics",
+      "topic_dir": "01_Basics",
+      "difficulty": "Easy",
+      "path": "01_Basics/Easy/Armstrong_check.py",
+      "patterns": [
+        "Math"
+      ],
+      "updated_at": "2026-07-11T13:53:45",
+      "revision_count": 0,
+      "revision_due": "2026-07-12"
     }
   ]
 }
