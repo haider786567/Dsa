@@ -74,9 +74,9 @@
       "patterns": [
         "Math"
       ],
-      "updated_at": "2026-07-11T13:57:47",
-      "revision_count": 0,
-      "revision_due": "2026-07-12"
+      "updated_at": "2026-07-12T17:05:01",
+      "revision_count": 1,
+      "revision_due": "2026-07-15"
     },
     {
       "problem": "Check_prime_num",
