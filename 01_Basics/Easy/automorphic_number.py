@@ -16,3 +16,4 @@ def automorphic_check(n):
         print("No")
 
 automorphic_check(n)
+check_strong_num(a)
