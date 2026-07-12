@@ -22,9 +22,9 @@
       "patterns": [
         "Math"
       ],
-      "updated_at": "2026-07-10T17:14:51",
-      "revision_count": 0,
-      "revision_due": "2026-07-11"
+      "updated_at": "2026-07-12T16:32:37",
+      "revision_count": 1,
+      "revision_due": "2026-07-15"
     },
     {
       "problem": "automorphic_number",
