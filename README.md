@@ -33,9 +33,9 @@ Auto-updated by `upload.py`.
 
 | Problem | Topic | Pattern(s) | Revision Due | Status |
 | --- | --- | --- | --- | --- |
-| Armstrong_check | Basics | Math | 2026-07-12 | Due now |
 | check_prime | Basics | Math | 2026-07-13 | Due in 1 day(s) |
 | Count_digit | Basics | Math | 2026-07-13 | Due in 1 day(s) |
+| Armstrong_check | Basics | Math | 2026-07-15 | Due in 3 day(s) |
 | Factor_all_num | Basics | Math | 2026-07-15 | Due in 3 day(s) |
 | palindrome_check | Basics | Math | 2026-07-15 | Due in 3 day(s) |
 | Check_strong_num | Basics | Math | 2026-07-15 | Due in 3 day(s) |
@@ -47,6 +47,7 @@ Auto-updated by `upload.py`.
 
 | Problem | Topic | Difficulty | Pattern(s) | Updated |
 | --- | --- | --- | --- | --- |
+| [Armstrong_check](01_Basics/Easy/Armstrong_check.py) | Basics | Easy | Math | 2026-07-12 |
 | [Factor_all_num](01_Basics/Easy/Factor_all_num.py) | Basics | Easy | Math | 2026-07-12 |
 | [palindrome_check](01_Basics/Easy/palindrome_check.py) | Basics | Easy | Math | 2026-07-12 |
 | [Check_strong_num](01_Basics/Easy/Check_strong_num.py) | Basics | Easy | Math | 2026-07-12 |
@@ -54,5 +55,4 @@ Auto-updated by `upload.py`.
 | [check_prime](01_Basics/Easy/check_prime.py) | Basics | Easy | Math | 2026-07-12 |
 | [sum_of_digit](01_Basics/Easy/sum_of_digit.py) | Basics | Easy | Math | 2026-07-12 |
 | [automorphic_number](01_Basics/Easy/automorphic_number.py) | Basics | Easy | Math | 2026-07-12 |
-| [Armstrong_check](01_Basics/Easy/Armstrong_check.py) | Basics | Easy | Math | 2026-07-11 |
 | [Count_digit](01_Basics/Easy/Count_digit.py) | Basics | Easy | Math | 2026-07-10 |
