@@ -43,7 +43,6 @@ Auto-updated by `upload.py`.
 | Check_prime_num | Basics | Math | 2026-07-21 | Due in 6 day(s) |
 | sum_of_digit | Basics | Math | 2026-07-21 | Due in 6 day(s) |
 | automorphic_number | Basics | Math | 2026-07-21 | Due in 6 day(s) |
-| check_prime | Basics | Math | 2026-07-22 | Due in 7 day(s) |
 
 ## Recently Solved
 
