@@ -23,8 +23,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T16:32:37",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "automorphic_number",
@@ -36,8 +36,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T16:31:14",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "palindrome_check",
@@ -49,8 +49,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:03:24",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "Armstrong_check",
@@ -62,8 +62,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:05:28",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "Factor_all_num",
@@ -75,8 +75,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:05:01",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "Check_prime_num",
@@ -88,8 +88,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:02:24",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "Check_strong_num",
@@ -101,8 +101,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:02:46",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     },
     {
       "problem": "check_prime",
@@ -114,8 +114,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:01:55",
-      "revision_count": 0,
-      "revision_due": "2026-07-13"
+      "revision_count": 2,
+      "revision_due": "2026-07-22"
     },
     {
       "problem": "Harshad_num",
@@ -127,8 +127,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T18:54:50",
-      "revision_count": 1,
-      "revision_due": "2026-07-15"
+      "revision_count": 2,
+      "revision_due": "2026-07-21"
     }
   ]
 }
