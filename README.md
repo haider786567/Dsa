@@ -37,7 +37,6 @@ Auto-updated by `upload.py`.
 | Harshad_num | Basics | Math | 2026-07-21 | Due in 3 day(s) |
 | Factor_all_num | Basics | Math | 2026-07-21 | Due in 3 day(s) |
 | palindrome_check | Basics | Math | 2026-07-21 | Due in 3 day(s) |
-| Check_strong_num | Basics | Math | 2026-07-21 | Due in 3 day(s) |
 | sum_of_digit | Basics | Math | 2026-07-21 | Due in 3 day(s) |
 | automorphic_number | Basics | Math | 2026-07-21 | Due in 3 day(s) |
 

@@ -101,8 +101,8 @@
         "Math"
       ],
       "updated_at": "2026-07-12T17:02:46",
-      "revision_count": 2,
-      "revision_due": "2026-07-21"
+      "revision_count": 3,
+      "revision_due": "2026-08-01"
     },
     {
       "problem": "check_prime",
