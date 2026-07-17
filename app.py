@@ -390,6 +390,7 @@ class DSAHandler(SimpleHTTPRequestHandler):
                 count = int(problem.get("revision_count", 0)) + 1
                 interval = REVISION_INTERVALS[min(count, len(REVISION_INTERVALS) - 1)]
                 problem["revision_count"] = count
+                problem["last_revised"] = date.today().isoformat()
                 problem["revision_due"] = (date.today() + timedelta(days=interval)).isoformat()
                 save_json(PROGRESS_FILE, progress)
                 update_readme(progress)

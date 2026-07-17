@@ -125,10 +125,12 @@ def upsert_problem(progress, problem_data):
             existing.update(problem_data)
             existing["revision_count"] = existing.get("revision_count", 0) + 1
             existing["revision_due"] = revision_due_date(existing["revision_count"]).isoformat()
+            existing["last_revised"] = date.today().isoformat()
             return existing, True
 
     problem_data["revision_count"] = 0
     problem_data["revision_due"] = revision_due_date(0).isoformat()
+    problem_data["last_revised"] = None
     progress["problems"].append(problem_data)
     return problem_data, False
 
@@ -182,14 +184,22 @@ def build_readme(progress):
         key=lambda item: item.get("revision_due", "9999-12-31"),
     )
 
-    due_rows = []
+    revision_rows = []
     for item in revision_items:
         due = datetime.strptime(item["revision_due"], "%Y-%m-%d").date()
-        if due <= today + timedelta(days=7):
-            status = "Due now" if due <= today else f"Due in {(due - today).days} day(s)"
-            due_rows.append(
-                f"| {item['problem']} | {item['topic']} | {', '.join(item['patterns'])} | {item['revision_due']} | {status} |"
-            )
+        days = (due - today).days
+        if days < 0:
+            status = f"Overdue by {-days} day(s)"
+        elif days == 0:
+            status = "Due today"
+        else:
+            status = f"Due in {days} day(s)"
+        last_revised = item.get("last_revised")
+        if not last_revised:
+            last_revised = "Not revised yet" if item.get("revision_count", 0) == 0 else "Before tracking"
+        revision_rows.append(
+            f"| {item['problem']} | {item['topic']} | {item.get('revision_count', 0)} | {last_revised} | {item['revision_due']} | {status} |"
+        )
 
     topic_rows = [
         f"| {topic} | {topic_counts.get(topic, 0)} | {progress_bar(topic_counts.get(topic, 0), total)} |"
@@ -242,11 +252,13 @@ Auto-updated by `upload.py`.
 | --- | ---: |
 {readme_table(pattern_rows, "| No patterns yet | 0 |")}
 
-## Revision Queue
+## Revision Tracker
 
-| Problem | Topic | Pattern(s) | Revision Due | Status |
-| --- | --- | --- | --- | --- |
-{readme_table(due_rows, "| No revision due in the next 7 days | - | - | - | - |")}
+Every saved problem appears here. This table is regenerated whenever you submit or mark a solution as revised.
+
+| Problem | Topic | Revisions | Last Revised | Next Revision | Status |
+| --- | --- | ---: | --- | --- | --- |
+{readme_table(revision_rows, "| No saved problems yet | - | 0 | - | - | - |")}
 
 ## Recently Solved
 

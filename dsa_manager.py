@@ -335,8 +335,13 @@ def cmd_mark_revised(args: argparse.Namespace) -> None:
     count = int(problem.get("revision_count", 0)) + 1
     interval = REVISION_INTERVALS[min(count, len(REVISION_INTERVALS) - 1)]
     problem["revision_count"] = count
+    problem["last_revised"] = date.today().isoformat()
     problem["revision_due"] = (date.today() + timedelta(days=interval)).isoformat()
     save_json(PROGRESS_FILE, progress)
+    # Imported lazily because upload.py also imports the shared DSA helpers.
+    from upload import update_readme
+
+    update_readme(progress)
     print(f"Marked '{problem['problem']}' revised. Next review: {problem['revision_due']} ({interval} days).")
 
 

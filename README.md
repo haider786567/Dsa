@@ -9,7 +9,7 @@ Auto-updated by `upload.py`.
 | Problems solved | 10 |
 | Topics touched | 1 |
 | Patterns identified | 1 |
-| Last updated | 2026-07-18 02:20 |
+| Last updated | 2026-07-18 02:23 |
 
 ## Topic Progress
 
@@ -30,15 +30,22 @@ Auto-updated by `upload.py`.
 | --- | ---: |
 | Math | 10 |
 
-## Revision Queue
+## Revision Tracker
 
-| Problem | Topic | Pattern(s) | Revision Due | Status |
-| --- | --- | --- | --- | --- |
-| Harshad_num | Basics | Math | 2026-07-21 | Due in 3 day(s) |
-| Factor_all_num | Basics | Math | 2026-07-21 | Due in 3 day(s) |
-| palindrome_check | Basics | Math | 2026-07-21 | Due in 3 day(s) |
-| sum_of_digit | Basics | Math | 2026-07-21 | Due in 3 day(s) |
-| automorphic_number | Basics | Math | 2026-07-21 | Due in 3 day(s) |
+Every saved problem appears here. This table is regenerated whenever you submit or mark a solution as revised.
+
+| Problem | Topic | Revisions | Last Revised | Next Revision | Status |
+| --- | --- | ---: | --- | --- | --- |
+| Harshad_num | Basics | 2 | Before tracking | 2026-07-21 | Due in 3 day(s) |
+| Factor_all_num | Basics | 2 | Before tracking | 2026-07-21 | Due in 3 day(s) |
+| palindrome_check | Basics | 2 | Before tracking | 2026-07-21 | Due in 3 day(s) |
+| sum_of_digit | Basics | 2 | Before tracking | 2026-07-21 | Due in 3 day(s) |
+| automorphic_number | Basics | 2 | Before tracking | 2026-07-21 | Due in 3 day(s) |
+| check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 11 day(s) |
+| Armstrong_check | Basics | 3 | Before tracking | 2026-08-01 | Due in 14 day(s) |
+| Check_prime_num | Basics | 3 | Before tracking | 2026-08-01 | Due in 14 day(s) |
+| Check_strong_num | Basics | 4 | Before tracking | 2026-08-17 | Due in 30 day(s) |
+| Count_digit | Basics | 4 | Before tracking | 2026-08-17 | Due in 30 day(s) |
 
 ## Recently Solved
 
