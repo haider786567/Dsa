@@ -40,7 +40,7 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Revisions | Last Revised | Next Revision | Status |
 | --- | --- | ---: | --- | --- | --- |
-| Palindrome_string_check | Basics | 0 | Not revised yet | 2026-07-22 | Due in 1 day(s) |
+| Palindrome_string_check | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 3 day(s) |
 | reverseSubArray | Arrays | 1 | 2026-07-21 | 2026-07-24 | Due in 3 day(s) |
 | factorial | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 3 day(s) |
 | check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 8 day(s) |

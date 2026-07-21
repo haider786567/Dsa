@@ -1,3 +1,4 @@
+# Read input, solve the problem, and print the answer.
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         left = 0 
