@@ -134,6 +134,20 @@
       "revision_count": 3,
       "revision_due": "2026-08-03",
       "last_revised": "2026-07-20"
+    },
+    {
+      "problem": "factorial",
+      "topic": "Basics",
+      "topic_dir": "01_Basics",
+      "difficulty": "Easy",
+      "path": "01_Basics/Easy/factorial.py",
+      "patterns": [
+        "General Problem Solving"
+      ],
+      "updated_at": "2026-07-21T20:05:48",
+      "revision_count": 0,
+      "revision_due": "2026-07-22",
+      "last_revised": null
     }
   ]
 }

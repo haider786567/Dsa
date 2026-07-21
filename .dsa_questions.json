@@ -555,5 +555,23 @@
     ],
     "tests": [],
     "auto_generated": true
+  },
+  {
+    "id": "factorial",
+    "title": "Factorial",
+    "source_names": [
+      "factorial"
+    ],
+    "topic": "Basics",
+    "difficulty": "Easy",
+    "prompt": "Given a positive integer n, find the factorial of n.\n\nThe factorial of a non-negative integer n is the product of all positive integers less than or equal to n. It is denoted by n!.\n\nFactorial of 0 is defined as 1.\n\nExample 1:\n\nInput: n = 5\nOutput: 120\nExplanation: 5! = 5 * 4 * 3 * 2 * 1 = 120\nExample 2:\n\nInput: n = 0\nOutput: 1\nExplanation: 0! = 1 by definition\nExample 3:\n\nInput: n = 10\nOutput: 3628800\nExplanation: 10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3628800\nConstraints:\n\n\u2022\n0 <= n <= 20\nInput Format\n\nn: int - A positive integer whose factorial is to be found\n\nOutput Format\n\nint - The factorial of the given number n",
+    "constraints": "Use the original problem's constraints. Choose an algorithm appropriate for the stated input size; do not rely on only sample inputs.",
+    "edge_cases": [
+      "0",
+      "One-digit or smallest input",
+      "Largest permitted value"
+    ],
+    "tests": [],
+    "auto_generated": false
   }
 ]

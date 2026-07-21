@@ -6,22 +6,22 @@ Auto-updated by `upload.py`.
 
 | Metric | Value |
 | --- | ---: |
-| Problems solved | 10 |
+| Problems solved | 11 |
 | Topics touched | 1 |
-| Patterns identified | 1 |
-| Last updated | 2026-07-21 17:05 |
+| Patterns identified | 2 |
+| Last updated | 2026-07-21 20:05 |
 
 ## Topic Progress
 
 | Topic | Solved | Progress |
 | --- | ---: | --- |
-| Basics | 10 | `[####################] 100%` |
+| Basics | 11 | `[####################] 100%` |
 
 ## Difficulty
 
 | Difficulty | Solved |
 | --- | ---: |
-| Easy | 9 |
+| Easy | 10 |
 | Medium | 1 |
 
 ## Pattern Matching
@@ -29,6 +29,7 @@ Auto-updated by `upload.py`.
 | Pattern | Problems |
 | --- | ---: |
 | Math | 10 |
+| General Problem Solving | 1 |
 
 ## Revision Tracker
 
@@ -36,6 +37,7 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Revisions | Last Revised | Next Revision | Status |
 | --- | --- | ---: | --- | --- | --- |
+| factorial | Basics | 0 | Not revised yet | 2026-07-22 | Due in 1 day(s) |
 | check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 8 day(s) |
 | Armstrong_check | Basics | 3 | Before tracking | 2026-08-01 | Due in 11 day(s) |
 | Check_prime_num | Basics | 3 | Before tracking | 2026-08-01 | Due in 11 day(s) |
@@ -51,6 +53,7 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Difficulty | Pattern(s) | Updated |
 | --- | --- | --- | --- | --- |
+| [factorial](01_Basics/Easy/factorial.py) | Basics | Easy | General Problem Solving | 2026-07-21 |
 | [palindrome_check](01_Basics/Easy/palindrome_check.py) | Basics | Easy | Math | 2026-07-21 |
 | [automorphic_number](01_Basics/Easy/automorphic_number.py) | Basics | Easy | Math | 2026-07-20 |
 | [Harshad_num](01_Basics/Medium/Harshad_num.py) | Basics | Medium | Math | 2026-07-12 |
@@ -60,4 +63,3 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 | [Check_prime_num](01_Basics/Easy/Check_prime_num.py) | Basics | Easy | Math | 2026-07-12 |
 | [check_prime](01_Basics/Easy/check_prime.py) | Basics | Easy | Math | 2026-07-12 |
 | [sum_of_digit](01_Basics/Easy/sum_of_digit.py) | Basics | Easy | Math | 2026-07-12 |
-| [Count_digit](01_Basics/Easy/Count_digit.py) | Basics | Easy | Math | 2026-07-10 |
