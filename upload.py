@@ -341,7 +341,7 @@ def main():
 
     save_progress(progress)
     if question_detail:
-        save_question_for_problem(saved_problem, question_detail)
+        save_question_for_problem(saved_problem, question_detail, code)
         question_added = True
     else:
         question_added = ensure_question_for_problem(saved_problem)

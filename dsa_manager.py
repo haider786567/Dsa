@@ -8,6 +8,7 @@ problems and `.dsa_questions.json` contains the practice question bank.
 from __future__ import annotations
 
 import argparse
+import ast
 import contextlib
 import importlib.util
 import io
@@ -124,10 +125,199 @@ def auto_question(problem: str, topic: str, difficulty: str, patterns: list[str]
         "difficulty": difficulty,
         "prompt": f"Re-solve '{problem}' from scratch. Use its original platform statement for the exact input and output format. Identify the {pattern_text} approach before writing code.",
         "constraints": "Use the original problem's constraints. Choose an algorithm appropriate for the stated input size; do not rely on only sample inputs.",
+        "examples": [],
         "edge_cases": edges_by_topic.get(topic, ["Smallest valid input", "Largest valid input", "Duplicates or repeated state when allowed"]),
         "tests": [],
         "auto_generated": True,
     }
+
+
+def _statement_heading(line: str) -> tuple[str | None, str]:
+    """Return a recognised statement section and any text following its heading."""
+    cleaned = line.strip().strip("#").strip()
+    # Accept headings copied from Markdown, for example ``**Constraints:**``.
+    cleaned = re.sub(r"^[*_`]+|[*_`]+$", "", cleaned).strip()
+    match = re.match(r"^(?:problem\s+)?(description|statement|constraints?|examples?)(?:\s*:\s*(.*))?$", cleaned, re.I)
+    if match:
+        label = match.group(1).lower()
+        section = "constraints" if label.startswith("constraint") else "examples" if label.startswith("example") else "description"
+        return section, (match.group(2) or "").strip()
+    return None, cleaned
+
+
+def _append_example_part(example: dict[str, Any], kind: str, value: str) -> None:
+    if not value:
+        return
+    existing = str(example.get(kind, ""))
+    example[kind] = f"{existing}\n{value}".strip() if existing else value
+
+
+def _split_top_level(text: str) -> list[str]:
+    """Split comma-separated values without breaking lists or quoted strings."""
+    parts: list[str] = []
+    start = depth = 0
+    quote = ""
+    escaped = False
+    for index, char in enumerate(text):
+        if quote:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == quote:
+                quote = ""
+        elif char in "'\"":
+            quote = char
+        elif char in "([{":
+            depth += 1
+        elif char in ")]}":
+            depth = max(0, depth - 1)
+        elif char == "," and depth == 0:
+            parts.append(text[start:index].strip())
+            start = index + 1
+    parts.append(text[start:].strip())
+    return [part for part in parts if part]
+
+
+def _literal_value(value: str) -> Any:
+    """Read ordinary Python/JSON literals copied from an example output."""
+    try:
+        return ast.literal_eval(value.strip())
+    except (SyntaxError, ValueError):
+        return json.loads(value.strip())
+
+
+def _class_method_parameters(solution_code: str) -> tuple[str, list[str]] | None:
+    """Find a conventional LeetCode-style ``Solution`` method, if present."""
+    try:
+        tree = ast.parse(solution_code)
+    except SyntaxError:
+        return None
+    solution_class = next(
+        (node for node in tree.body if isinstance(node, ast.ClassDef) and node.name == "Solution"),
+        None,
+    )
+    if not solution_class:
+        return None
+    method = next(
+        (node for node in solution_class.body if isinstance(node, ast.FunctionDef) and not node.name.startswith("_")),
+        None,
+    )
+    if not method or method.args.vararg or method.args.kwarg:
+        return None
+    parameters = [argument.arg for argument in [*method.args.posonlyargs, *method.args.args]]
+    if parameters and parameters[0] == "self":
+        parameters.pop(0)
+    return method.name, parameters
+
+
+def generated_tests_from_examples(examples: list[dict[str, Any]], solution_code: str) -> dict[str, Any]:
+    """Create runnable tests from pasted examples when their format is unambiguous."""
+    usable = [example for example in examples if example.get("input") and example.get("output")]
+    class_method = _class_method_parameters(solution_code)
+    if class_method:
+        method, parameters = class_method
+        tests: list[dict[str, Any]] = []
+        for example in usable:
+            try:
+                assignments = []
+                for part in _split_top_level(str(example["input"]).replace("\n", ",")):
+                    name, raw_value = part.split("=", 1)
+                    assignments.append((name.strip(), _literal_value(raw_value)))
+                values_by_name = dict(assignments)
+                arguments = (
+                    [values_by_name[name] for name in parameters]
+                    if all(name in values_by_name for name in parameters)
+                    else [value for _, value in assignments] if len(assignments) == len(parameters) else []
+                )
+                if len(arguments) != len(parameters):
+                    continue
+                tests.append({"args": arguments, "expected": _literal_value(str(example["output"]))})
+            except (ValueError, SyntaxError, TypeError, json.JSONDecodeError):
+                continue
+        return {"runner": "class_method", "method": method, "tests": tests}
+
+    return {
+        "tests": [
+            {
+                "input": str(example["input"]).rstrip("\n") + "\n",
+                "expected": str(example["output"]).strip(),
+            }
+            for example in usable
+        ]
+    }
+
+
+def format_question_detail(question_detail: str, fallback_prompt: str, fallback_constraints: str) -> dict[str, Any]:
+    """Split a pasted platform statement into description, constraints, and examples.
+
+    The upload form intentionally accepts ordinary copied text. This recognises
+    common headings such as ``Example 1:``, ``Input:``, ``Output:``, and
+    ``Constraints:``. Tests are generated separately only when a solution's
+    interface and the example values can be read without guesswork.
+    """
+    description: list[str] = []
+    constraints: list[str] = []
+    examples: list[dict[str, Any]] = []
+    section = "description"
+    current_example: dict[str, Any] | None = None
+
+    def start_example(number: str | None = None) -> dict[str, Any]:
+        example = {"label": f"Example {number}" if number else f"Example {len(examples) + 1}"}
+        examples.append(example)
+        return example
+
+    def add_example_line(kind: str, value: str) -> None:
+        nonlocal current_example
+        if current_example is None:
+            current_example = start_example()
+        _append_example_part(current_example, kind, value)
+
+    for raw_line in question_detail.replace("\r\n", "\n").replace("\r", "\n").split("\n"):
+        line = raw_line.strip()
+        if not line:
+            if section == "description" and description and description[-1] != "":
+                description.append("")
+            continue
+
+        heading, remainder = _statement_heading(line)
+        if heading:
+            section = heading
+            current_example = None if heading != "examples" else current_example
+            if remainder:
+                if section == "constraints":
+                    constraints.append(remainder)
+                elif section == "examples":
+                    add_example_line("explanation", remainder)
+                else:
+                    description.append(remainder)
+            continue
+        line = remainder
+
+        example_match = re.match(r"^example\s*(\d+)?\s*:\s*(.*)$", line, re.I)
+        if example_match:
+            section = "examples"
+            current_example = start_example(example_match.group(1))
+            if example_match.group(2):
+                _append_example_part(current_example, "explanation", example_match.group(2).strip())
+            continue
+
+        field_match = re.match(r"^(input|output|explanation)\s*:\s*(.*)$", line, re.I)
+        if field_match:
+            section = "examples"
+            add_example_line(field_match.group(1).lower(), field_match.group(2).strip())
+            continue
+
+        if section == "constraints":
+            constraints.append(line)
+        elif section == "examples":
+            add_example_line("explanation", line)
+        else:
+            description.append(line)
+
+    prompt = "\n".join(description).strip() or fallback_prompt
+    constraint_text = "\n".join(constraints).strip() or fallback_constraints
+    return {"prompt": prompt, "constraints": constraint_text, "examples": examples}
 
 
 def ensure_question_for_problem(problem: dict[str, Any]) -> bool:
@@ -147,14 +337,15 @@ def ensure_question_for_problem(problem: dict[str, Any]) -> bool:
     return True
 
 
-def save_question_for_problem(problem: dict[str, Any], question_detail: str) -> dict[str, Any]:
+def save_question_for_problem(problem: dict[str, Any], question_detail: str, solution_code: str = "") -> dict[str, Any]:
     question = auto_question(
         problem["problem"],
         problem.get("topic", "General"),
         problem.get("difficulty", "Easy"),
         problem.get("patterns", []),
     )
-    question["prompt"] = question_detail
+    question.update(format_question_detail(question_detail, question["prompt"], question["constraints"]))
+    question.update(generated_tests_from_examples(question["examples"], solution_code))
     question["auto_generated"] = False
     questions = load_questions()
     for index, existing in enumerate(questions):
@@ -258,8 +449,15 @@ def render_question(question: dict[str, Any]) -> None:
     print("Edge cases to handle:")
     for edge_case in question.get("edge_cases", []):
         print(f"  - {edge_case}")
-    tests = question.get("tests", [])
-    if tests:
+    examples = question.get("examples", [])
+    if examples:
+        print("Examples:")
+        for example in examples:
+            print(f"  {example.get('label', 'Example')}")
+            for label in ("input", "output", "explanation"):
+                if example.get(label):
+                    print(f"    {label.title()}: {example[label]}")
+    elif tests := question.get("tests", []):
         print("Sample tests:")
         for test in tests[:3]:
             sample_input = test.get("args", test.get("input", ""))

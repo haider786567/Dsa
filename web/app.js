@@ -67,6 +67,26 @@ function starterCode(question) {
   return "# Read input, solve the problem, and print the answer.\n";
 }
 
+function renderExamples(question) {
+  const extracted = Array.isArray(question.examples) && question.examples.length ? question.examples : null;
+  const examples = extracted || (question.tests || []).slice(0, 3).map((test, index) => ({
+    label: `Example ${index + 1}`,
+    input: JSON.stringify(test.args ?? test.input ?? ""),
+    output: JSON.stringify(test.expected),
+  }));
+  const node = $("#problemExamples");
+  if (!examples.length) {
+    node.innerHTML = '<p class="muted">No examples were included with this upload.</p>';
+    return;
+  }
+  node.innerHTML = examples.map((example, index) => {
+    const fields = [["Input", example.input], ["Output", example.output], ["Explanation", example.explanation]]
+      .filter(([, value]) => value)
+      .map(([label, value]) => `<div><strong>${label}</strong><code>${escapeHtml(value)}</code></div>`).join("");
+    return `<article class="example-card"><h4>${escapeHtml(example.label || `Example ${index + 1}`)}</h4>${fields}</article>`;
+  }).join("");
+}
+
 function selectQuestion(question, savedProblem = null) {
   state.selected = question; state.selectedSavedProblem = savedProblem;
   $("#practiceArea").classList.remove("hidden");
@@ -75,9 +95,7 @@ function selectQuestion(question, savedProblem = null) {
   $("#problemPrompt").textContent = question.prompt;
   $("#problemConstraints").textContent = question.constraints;
   $("#edgeCases").innerHTML = question.edge_cases.map(item => `<li>${escapeHtml(item)}</li>`).join("");
-  $("#sampleTests").innerHTML = question.tests.slice(0, 3).map(test => {
-    const input = test.args ?? test.input ?? ""; return `<div>input: ${escapeHtml(JSON.stringify(input))} → expected: ${escapeHtml(JSON.stringify(test.expected))}</div>`;
-  }).join("");
+  renderExamples(question);
   $("#solutionHint").textContent = question.runner === "class_method" ? `Create class Solution with method ${question.method}(...)` : "Read standard input and print only the final answer.";
   $("#codeEditor").value = localStorage.getItem(`dsa-draft:${question.id}`) || starterCode(question); $("#testResults").className = "test-results muted"; $("#testResults").textContent = "Your test results will appear here.";
   $("#markRevised").classList.toggle("hidden", !savedProblem);
@@ -136,7 +154,8 @@ async function uploadSolution(event) {
     state.dashboard = data.dashboard; state.topics = data.topics;
     state.questions = (await request("/api/questions")).questions;
     renderDashboard(); renderQuestions(); renderTopics();
-    message.className = "result-pass"; message.textContent = `${data.message}${data.prompt_added ? " Revision prompt created." : ""}`;
+    const testMessage = data.test_cases ? ` ${data.test_cases} test case${data.test_cases === 1 ? "" : "s"} ready.` : "";
+    message.className = "result-pass"; message.textContent = `${data.message}${data.prompt_added ? " Revision prompt created." : ""}${testMessage}`;
     $("#uploadForm").reset(); toggleNewTopic();
     if (data.question) selectQuestion(data.question, uploadedProblem);
   } catch (error) { message.className = "result-fail"; message.textContent = error.message; }

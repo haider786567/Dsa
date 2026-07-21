@@ -209,7 +209,7 @@ def save_solution(payload: dict) -> dict:
     save_json(PROGRESS_FILE, progress)
     if question_detail:
         prompt_added = True
-        generated_question = save_question_for_problem(saved, question_detail)
+        generated_question = save_question_for_problem(saved, question_detail, code)
     else:
         prompt_added = ensure_question_for_problem(saved)
         generated_question = next(
@@ -224,6 +224,7 @@ def save_solution(payload: dict) -> dict:
     return {
         "message": f"{'Updated revision' if was_revision else 'Saved solution'} in {destination.relative_to(ROOT)}. {git_message}",
         "prompt_added": prompt_added,
+        "test_cases": len(generated_question.get("tests", [])) if generated_question else 0,
         "question": dict(generated_question, source_path=destination.relative_to(ROOT).as_posix(), saved_problem=saved["problem"]) if generated_question else None,
         "dashboard": dashboard_data(),
         "topics": topic_options(),

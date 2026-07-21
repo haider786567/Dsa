@@ -30,7 +30,7 @@
             <label id="newTopicField" class="hidden">New category name<input id="uploadNewTopic" placeholder="e.g. Backtracking" /></label>
             <label>Difficulty<select id="uploadDifficulty"><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
           </div>
-          <label>Question details / problem statement<textarea id="uploadQuestionDetail" placeholder="Paste the original problem statement or write the exact conditions you want to remember."></textarea></label>
+          <label>Question details / problem statement<textarea id="uploadQuestionDetail" placeholder="Paste the full statement. Description, examples, and constraints are formatted automatically; compatible example inputs and outputs become test cases."></textarea></label>
           <label>Python solution<textarea id="uploadCode" required spellcheck="false" placeholder="Paste your completed Python solution here."></textarea></label>
           <div class="action-row"><button class="primary-button" type="submit">Save solution</button><span id="uploadMessage" class="muted"></span></div>
         </form>
@@ -61,9 +61,9 @@
       <section id="practiceArea" class="practice-area hidden" aria-live="polite">
         <div class="panel problem-panel">
           <div class="panel-heading"><div><p class="eyebrow" id="problemMeta">PRACTICE</p><h2 id="problemTitle">Choose a problem</h2></div><button class="quiet-button" id="closePractice">Close</button></div>
-          <p id="problemPrompt" class="prompt"></p>
+          <h3>Question description</h3><p id="problemPrompt" class="prompt"></p>
+          <h3>Examples</h3><div id="problemExamples" class="sample-tests"></div>
           <div class="detail-grid"><div><h3>Constraints</h3><p id="problemConstraints"></p></div><div><h3>Edge cases</h3><ul id="edgeCases"></ul></div></div>
-          <h3>Sample tests</h3><div id="sampleTests" class="sample-tests"></div>
           <div class="action-row"><button id="markRevised" class="secondary-button hidden">Mark as revised &amp; commit</button></div>
         </div>
 

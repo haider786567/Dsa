@@ -282,6 +282,7 @@ button {
 .prompt {
   font-size: 1.06rem;
   line-height: 1.62;
+  white-space: pre-line;
 }
 .detail-grid {
   display: grid;
@@ -295,6 +296,9 @@ button {
   margin: 0;
   padding-left: 0;
 }
+.detail-grid p {
+  white-space: pre-line;
+}
 .detail-grid ul {
   padding-left: 18px;
 }
@@ -302,13 +306,28 @@ button {
   display: grid;
   gap: 8px;
 }
-.sample-tests div {
+.example-card {
   background: #f1f5ee;
   border-radius: 8px;
   color: #34453a;
+  padding: 10px;
+}
+.example-card h4 {
+  margin: 0 0 8px;
+}
+.example-card div {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+}
+.example-card strong {
+  font-size: 0.78rem;
+}
+.example-card code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.8rem;
-  padding: 10px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
 .action-row {
   margin-top: 24px;
