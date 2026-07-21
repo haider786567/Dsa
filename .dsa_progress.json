@@ -163,6 +163,21 @@
       "revision_count": 1,
       "revision_due": "2026-07-24",
       "last_revised": "2026-07-21"
+    },
+    {
+      "problem": "Palindrome_string_check",
+      "topic": "Basics",
+      "topic_dir": "01_Basics",
+      "difficulty": "Easy",
+      "path": "01_Basics/Easy/Palindrome_string_check.py",
+      "patterns": [
+        "Two Pointers",
+        "Sliding Window"
+      ],
+      "updated_at": "2026-07-21T22:11:19",
+      "revision_count": 0,
+      "revision_due": "2026-07-22",
+      "last_revised": null
     }
   ]
 }

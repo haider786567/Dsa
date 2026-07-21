@@ -591,5 +591,23 @@
     ],
     "tests": [],
     "auto_generated": false
+  },
+  {
+    "id": "palindrome-string-check",
+    "title": "Palindrome String Check",
+    "source_names": [
+      "Palindrome_string_check"
+    ],
+    "topic": "Basics",
+    "difficulty": "Easy",
+    "prompt": "Given a string s, check if it is a palindrome or not. A palindrome is a word, phrase, or sequence that reads the same backward as forward.\n\nExample 1:\n\nInput: s = \"abba\"\nOutput: true\nExplanation: \"abba\" reads the same forward and backward, so it is a palindrome.\nExample 2:\n\nInput: s = \"abc\"\nOutput: false\nExplanation: \"abc\" reversed is \"cba\" which is not the same as \"abc\", so it is not a palindrome.\nExample 3:\n\nInput: s = \"a\"\nOutput: true\nExplanation: A single character string is always a palindrome.\nConstraints:\n\n\u2022\n1 <= s.length <= 105\n\u2022\nThe string consists of lowercase English alphabets only.\nInput Format\n\ns: str - A string to check if it is a palindrome\n\nOutput Format\n\nbool - True if the string is a palindrome, False otherwise",
+    "constraints": "Use the original problem's constraints. Choose an algorithm appropriate for the stated input size; do not rely on only sample inputs.",
+    "edge_cases": [
+      "0",
+      "One-digit or smallest input",
+      "Largest permitted value"
+    ],
+    "tests": [],
+    "auto_generated": false
   }
 ]
