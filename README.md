@@ -9,7 +9,7 @@ Auto-updated by `upload.py`.
 | Problems solved | 12 |
 | Topics touched | 2 |
 | Patterns identified | 4 |
-| Last updated | 2026-07-21 21:30 |
+| Last updated | 2026-07-21 21:31 |
 
 ## Topic Progress
 
@@ -40,7 +40,7 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Revisions | Last Revised | Next Revision | Status |
 | --- | --- | ---: | --- | --- | --- |
-| reverseSubArray | Arrays | 0 | Not revised yet | 2026-07-22 | Due in 1 day(s) |
+| reverseSubArray | Arrays | 1 | 2026-07-21 | 2026-07-24 | Due in 3 day(s) |
 | factorial | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 3 day(s) |
 | check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 8 day(s) |
 | Armstrong_check | Basics | 3 | Before tracking | 2026-08-01 | Due in 11 day(s) |

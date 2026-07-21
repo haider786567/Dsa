@@ -1,3 +1,4 @@
+# Read input, solve the problem, and print the answer.
 class Solution:
 	def reverseSubArray(self,arr,l,r):
 		# code here
