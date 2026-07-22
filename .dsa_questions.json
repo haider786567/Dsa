@@ -646,5 +646,29 @@
     ],
     "tests": [],
     "auto_generated": false
+  },
+  {
+    "id": "second-largest-element",
+    "title": "Second Largest Element",
+    "source_names": [
+      "second_largest_element"
+    ],
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "prompt": "Write a program to find the second greatest element in an array and print its value.\n\nInput Format\nThe first line contains an integer n, representing the number of elements in the array.\nThe second line contains n space-separated integers representing the elements of the array.\nOutput Format\n\nPrint the second greatest element in the following format:\n\nSecond greatest element = X\n\nwhere:\n\nX is the second largest element in the array.",
+    "constraints": "2 <= n <= 10^3\n-2^31 <= arr[i] < 2^31\nSample Input 1\n6\n2 96 69 77 145 20\nSample Output 1\nSecond greatest element = 96\nSample Input 2\n5\n10 23 45 67 89\nSample Output 2\nSecond greatest element = 67\nExplanation\nExample 1\nArray:\n[2, 96, 69, 77, 145, 20]\nGreatest element = 145\nSecond greatest element = 96",
+    "examples": [
+      {
+        "label": "Example 1",
+        "explanation": "Second greatest element = 96\nExample 2\nArray:\n[10, 23, 45, 67, 89]\nGreatest element = 89\nSecond greatest element = 67\nSecond greatest element = 67"
+      }
+    ],
+    "edge_cases": [
+      "Empty or one-element input",
+      "Duplicates",
+      "First and last indices"
+    ],
+    "tests": [],
+    "auto_generated": false
   }
 ]

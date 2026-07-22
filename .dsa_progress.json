@@ -207,6 +207,21 @@
       "revision_count": 2,
       "revision_due": "2026-07-29",
       "last_revised": "2026-07-22"
+    },
+    {
+      "problem": "second_largest_element",
+      "topic": "Arrays",
+      "topic_dir": "03_Arrays",
+      "difficulty": "Easy",
+      "path": "03_Arrays/Easy/second_largest_element.py",
+      "patterns": [
+        "Two Pointers",
+        "Hashing"
+      ],
+      "updated_at": "2026-07-22T19:41:08",
+      "revision_count": 0,
+      "revision_due": "2026-07-23",
+      "last_revised": null
     }
   ]
 }
