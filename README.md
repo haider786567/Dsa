@@ -43,11 +43,11 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Revisions | Last Revised | Next Revision | Status |
 | --- | --- | ---: | --- | --- | --- |
-| selection_sort | Sorting | 0 | Not revised yet | 2026-07-24 | Due in 1 day(s) |
 | Fibonaci_number | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
 | Palindrome_string_check | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
 | reverseSubArray | Arrays | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
 | factorial | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
+| selection_sort | Sorting | 1 | 2026-07-23 | 2026-07-26 | Due in 3 day(s) |
 | second_largest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 6 day(s) |
 | Greatest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 6 day(s) |
 | check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 6 day(s) |
