@@ -47,10 +47,10 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 | Palindrome_string_check | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
 | reverseSubArray | Arrays | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
 | factorial | Basics | 1 | 2026-07-21 | 2026-07-24 | Due in 1 day(s) |
-| selection_sort | Sorting | 1 | 2026-07-23 | 2026-07-26 | Due in 3 day(s) |
 | second_largest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 6 day(s) |
 | Greatest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 6 day(s) |
 | check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 6 day(s) |
+| selection_sort | Sorting | 2 | 2026-07-23 | 2026-07-30 | Due in 7 day(s) |
 | Armstrong_check | Basics | 3 | Before tracking | 2026-08-01 | Due in 9 day(s) |
 | Check_prime_num | Basics | 3 | Before tracking | 2026-08-01 | Due in 9 day(s) |
 | Harshad_num | Basics | 3 | 2026-07-20 | 2026-08-03 | Due in 11 day(s) |
