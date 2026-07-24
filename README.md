@@ -43,12 +43,12 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Revisions | Last Revised | Next Revision | Status |
 | --- | --- | ---: | --- | --- | --- |
-| leftRotatebyOne | Arrays | 1 | 2026-07-24 | 2026-07-27 | Due in 3 day(s) |
 | second_largest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 5 day(s) |
 | Greatest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 5 day(s) |
 | check_prime | Basics | 3 | Before tracking | 2026-07-29 | Due in 5 day(s) |
 | Bubble_sort | Sorting | 2 | 2026-07-23 | 2026-07-30 | Due in 6 day(s) |
 | selection_sort | Sorting | 2 | 2026-07-23 | 2026-07-30 | Due in 6 day(s) |
+| leftRotatebyOne | Arrays | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
 | insertion_Sort | Sorting | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
 | Fibonaci_number | Basics | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
 | Palindrome_string_check | Basics | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
