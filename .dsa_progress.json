@@ -175,9 +175,9 @@
         "Sliding Window"
       ],
       "updated_at": "2026-07-21T22:11:28",
-      "revision_count": 1,
-      "revision_due": "2026-07-24",
-      "last_revised": "2026-07-21"
+      "revision_count": 2,
+      "revision_due": "2026-07-31",
+      "last_revised": "2026-07-24"
     },
     {
       "problem": "Fibonaci_number",

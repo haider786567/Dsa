@@ -43,7 +43,6 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 
 | Problem | Topic | Revisions | Last Revised | Next Revision | Status |
 | --- | --- | ---: | --- | --- | --- |
-| Palindrome_string_check | Basics | 1 | 2026-07-21 | 2026-07-24 | Due today |
 | reverseSubArray | Arrays | 1 | 2026-07-21 | 2026-07-24 | Due today |
 | factorial | Basics | 1 | 2026-07-21 | 2026-07-24 | Due today |
 | second_largest_element | Arrays | 2 | 2026-07-22 | 2026-07-29 | Due in 5 day(s) |
@@ -53,6 +52,7 @@ Every saved problem appears here. This table is regenerated whenever you submit 
 | selection_sort | Sorting | 2 | 2026-07-23 | 2026-07-30 | Due in 6 day(s) |
 | insertion_Sort | Sorting | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
 | Fibonaci_number | Basics | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
+| Palindrome_string_check | Basics | 2 | 2026-07-24 | 2026-07-31 | Due in 7 day(s) |
 | Armstrong_check | Basics | 3 | Before tracking | 2026-08-01 | Due in 8 day(s) |
 | Check_prime_num | Basics | 3 | Before tracking | 2026-08-01 | Due in 8 day(s) |
 | Harshad_num | Basics | 3 | 2026-07-20 | 2026-08-03 | Due in 10 day(s) |
