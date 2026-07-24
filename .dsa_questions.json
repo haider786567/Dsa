@@ -933,5 +933,26 @@
     ],
     "tests": [],
     "auto_generated": false
+  },
+  {
+    "id": "move-zerousingspace",
+    "title": "Move Zerousingspace",
+    "source_names": [
+      "Move_zeroUsingSpace"
+    ],
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "prompt": "Given an array containing only 0s and 1s, move all the 0s to the end of the array.\n\nYou may use extra space to perform this operation.\n\nInput Format\nThe first line contains an integer n, the number of elements.\nThe second line contains n space-separated integers (0 or 1) representing the array.\nOutput Format\nPrint the modified array with all 0s moved to the end, space-separated.\n\nFor JavaScript: Return the modified array.",
+    "constraints": "0 <= n <= 10^5\nThe array contains only 0s and 1s.\nSample Input 1\n5\n0 1 0 1 1\nSample Output 1\n1 1 1 0 0\nSample Input 2\n6\n1 0 1 0 1 0\nSample Output 2\n1 1 1 0 0 0",
+    "examples": [],
+    "edge_cases": [
+      "Empty or one-element input",
+      "Duplicates",
+      "First and last indices"
+    ],
+    "tests": [],
+    "auto_generated": false,
+    "runner": "class_method",
+    "method": "moveZeros"
   }
 ]
