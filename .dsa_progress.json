@@ -160,9 +160,9 @@
         "Sliding Window"
       ],
       "updated_at": "2026-07-21T21:31:33",
-      "revision_count": 1,
-      "revision_due": "2026-07-24",
-      "last_revised": "2026-07-21"
+      "revision_count": 2,
+      "revision_due": "2026-07-31",
+      "last_revised": "2026-07-24"
     },
     {
       "problem": "Palindrome_string_check",
